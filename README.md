@@ -9,14 +9,13 @@ disabilities, based in Albuquerque, NM.
 - `index.html` — the full site (single page, self-contained CSS, no build step)
 - `assets/` — images referenced by the site
 
-## Required images
+## Images
 
-`index.html` references the following files in `assets/`, which need to be
-added from the original desktop project:
+`index.html` references the following files in `assets/`:
 
 | File | Used for |
 | --- | --- |
-| `assets/maxcare-logo.png` | Header logo |
+| `assets/maxcare-logo.png` | Header logo — **still missing, needs to be added** |
 | `assets/p-3244.jpg` | Hero image |
 | `assets/p-3548.jpg` | Houses gallery (wide) |
 | `assets/p-3517.jpg` | Houses gallery |
