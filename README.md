@@ -15,7 +15,7 @@ disabilities, based in Albuquerque, NM.
 
 | File | Used for |
 | --- | --- |
-| `assets/maxcare-logo.png` | Header logo — **still missing, needs to be added** |
+| `assets/maxcare-logo.png` | Header logo |
 | `assets/p-3244.jpg` | Hero image |
 | `assets/p-3548.jpg` | Houses gallery (wide) |
 | `assets/p-3517.jpg` | Houses gallery |
