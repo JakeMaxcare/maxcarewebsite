@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maxcare, Inc. — Residential &amp; Community Services in Albuquerque, NM</title>
+<meta name="description" content="Maxcare operates residential group homes and Customized Community Supports across Albuquerque, helping New Mexicans with intellectual and developmental disabilities live full, connected lives.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --cream:#f6f2ea;
+    --cream-deep:#eee7da;
+    --ink:#1b2321;
+    --ink-soft:#4b5451;
+    --ink-muted:#5b6360;
+    --teal:#0a5e65;
+    --teal-dark:#062e32;
+    --terracotta:#bd6740;
+    --border:#e4ddd0;
+    --border-light:#ece5d9;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);font-family:'Public Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;color:var(--ink)}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{color:var(--terracotta)}
+  h1,h2,h3{font-family:'Newsreader',Georgia,serif;font-weight:500;letter-spacing:-.01em}
+  img{display:block}
+  .wrap{max-width:1440px;margin:0 auto;background:var(--cream)}
+  .eyebrow{font:600 13px/1 ui-monospace,Menlo,monospace;letter-spacing:.22em;text-transform:uppercase;color:var(--terracotta)}
+  .btn{display:inline-block;font-weight:600;font-size:17px;padding:16px 30px;border-radius:8px}
+  .btn-primary{background:var(--teal);color:#fff}
+  .btn-primary:hover{background:#0c6f77;color:#fff}
+  .btn-outline{background:transparent;border:1.5px solid #c9beac;color:#33403d}
+  .btn-outline:hover{border-color:var(--terracotta);color:var(--terracotta)}
+  .btn-accent{background:var(--terracotta);color:#fff}
+  .btn-accent:hover{background:#a85732;color:#fff}
+
+  /* header */
+  .site-header{display:flex;align-items:center;justify-content:space-between;padding:22px 56px;background:#fff;border-bottom:1px solid var(--border-light);position:relative;z-index:5}
+  .site-header .logo{height:42px;width:auto}
+  .site-nav{display:flex;align-items:center;gap:38px;font-size:16px;font-weight:500}
+  .site-nav a{color:#33403d}
+  .site-nav a:hover{color:var(--terracotta)}
+  .site-nav .nav-cta{border:1.5px solid var(--teal);color:var(--teal);padding:11px 22px;border-radius:8px;font-weight:600}
+  .site-nav .nav-cta:hover{background:var(--teal);color:#fff}
+  .nav-toggle{display:none;background:none;border:1.5px solid var(--border);border-radius:8px;padding:9px 12px;font-size:20px;line-height:1;color:#33403d;cursor:pointer}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+  .hero-copy{background:var(--cream);padding:88px 64px;display:flex;flex-direction:column;justify-content:center;gap:24px}
+  .hero-copy h1{font-size:58px;line-height:1.05;font-weight:500}
+  .hero-copy p{color:var(--ink-soft);font-size:19px;line-height:1.6;max-width:500px}
+  .hero-ctas{display:flex;gap:14px;margin-top:6px;flex-wrap:wrap}
+  .hero-media{position:relative;overflow:hidden;background:#d6e0de;min-height:340px}
+  .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+
+  /* trust bar */
+  .trust-bar{background:var(--teal-dark);padding:26px 56px}
+  .trust-bar-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:#cfe0dd;font-size:15px;font-weight:500}
+
+  /* mission */
+  .mission{background:var(--cream-deep);padding:84px 56px}
+  .mission-inner{max-width:1000px;margin:0 auto;text-align:center}
+  .mission .eyebrow{display:block;margin-bottom:22px}
+  .mission p{font-family:'Newsreader',serif;font-size:34px;line-height:1.4;color:#26302e}
+
+  /* services */
+  .services{padding:88px 56px}
+  .services-head{text-align:center;margin-bottom:52px}
+  .services-head .eyebrow{display:block;margin-bottom:14px}
+  .services-head h2{font-size:46px;line-height:1.05}
+  .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  .service-card{border:1px solid var(--border);border-radius:16px;padding:40px;background:#fff}
+  .service-card .num{font-family:'Newsreader',serif;font-size:30px;color:var(--terracotta);margin-bottom:18px}
+  .service-card h3{font-size:30px;margin-bottom:14px}
+  .service-card p{color:var(--ink-muted);font-size:16px;line-height:1.65;margin-bottom:22px}
+  .service-card a{font-weight:600;font-size:15px}
+
+  /* houses */
+  .houses{background:var(--cream-deep);padding:84px 56px}
+  .houses-inner{display:grid;grid-template-columns:1fr 1.15fr;gap:52px;align-items:center}
+  .houses .eyebrow{display:block;margin-bottom:16px}
+  .houses h2{font-size:44px;line-height:1.08;margin-bottom:20px}
+  .houses .lede{color:var(--ink-soft);font-size:18px;line-height:1.65;margin-bottom:20px}
+  .houses .body{color:var(--ink-muted);font-size:16px;line-height:1.65;margin-bottom:28px}
+  .houses-gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .houses-gallery .cell{border-radius:14px;overflow:hidden;background:#d6e0de}
+  .houses-gallery .cell img{width:100%;height:100%;object-fit:cover}
+  .houses-gallery .cell-wide{grid-column:1/3;height:280px}
+  .houses-gallery .cell-wide img{object-position:center 30%}
+  .houses-gallery .cell-a{height:230px}
+  .houses-gallery .cell-a img{object-position:center 20%}
+  .houses-gallery .cell-b{height:230px}
+  .houses-gallery .cell-b img{object-position:center 35%}
+
+  /* story */
+  .story{max-width:1000px;margin:0 auto;padding:88px 56px;text-align:center}
+  .story .eyebrow{display:block;margin-bottom:22px}
+  .story blockquote{font-family:'Newsreader',serif;font-size:32px;line-height:1.4;color:#26302e;margin-bottom:24px}
+  .story .attribution{color:var(--ink-muted);font-size:15px;font-weight:600;letter-spacing:.04em}
+
+  /* careers */
+  .careers{background:var(--teal);overflow:hidden}
+  .careers-inner{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+  .careers-copy{padding:76px 56px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+  .careers-copy .eyebrow{color:#f0c9a6}
+  .careers-copy h2{color:#fff;font-size:42px;line-height:1.08}
+  .careers-copy p{color:#cfe0dd;font-size:18px;line-height:1.6;max-width:460px}
+  .careers-copy .btn{align-self:flex-start;margin-top:8px}
+  .careers-media{position:relative;min-height:400px;overflow:hidden;background:#0c565c}
+  .careers-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%}
+
+  /* footer */
+  .site-footer{background:var(--teal-dark);padding:60px 56px 40px}
+  .footer-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:36px}
+  .footer-brand{max-width:340px}
+  .footer-brand .name{font-family:'Newsreader',serif;font-size:26px;color:#fff;margin-bottom:12px}
+  .footer-brand p{color:#9fc0bd;font-size:15px;line-height:1.6}
+  .footer-cols{display:flex;gap:64px;flex-wrap:wrap}
+  .footer-col{display:flex;flex-direction:column;gap:12px}
+  .footer-col .label{color:#6fa39f;font:600 12px/1 ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase;margin-bottom:4px}
+  .footer-col a,.footer-col span{color:#dfeeec;font-size:15px}
+  .footer-col a:hover{color:#f0c9a6}
+  .footer-legal{margin-top:18px;color:#6a938f;font-size:13px}
+
+  /* responsive */
+  @media (max-width:1024px){
+    .hero-copy{padding:64px 40px}
+    .hero-copy h1{font-size:46px}
+    .services,.houses,.mission,.trust-bar{padding-left:40px;padding-right:40px}
+    .site-header,.site-footer{padding-left:40px;padding-right:40px}
+    .careers-copy{padding:64px 40px}
+    .houses-inner{grid-template-columns:1fr;gap:40px}
+    .trust-bar-inner{justify-content:center}
+  }
+  @media (max-width:820px){
+    .nav-toggle{display:block}
+    .site-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--border-light);box-shadow:0 20px 40px -24px rgba(20,40,38,.35)}
+    .site-nav.open{display:flex}
+    .site-nav a{padding:14px 0;width:100%;font-size:17px}
+    .site-nav .nav-cta{margin-top:10px;text-align:center}
+    .hero{grid-template-columns:1fr;min-height:0}
+    .hero-media{min-height:320px;position:relative}
+    .hero-copy h1{font-size:38px}
+    .services-grid{grid-template-columns:1fr}
+    .services-head h2{font-size:36px}
+    .mission p{font-size:26px}
+    .houses h2{font-size:36px}
+    .story blockquote{font-size:26px}
+    .careers-inner{grid-template-columns:1fr}
+    .careers-copy h2{font-size:34px}
+    .careers-media{min-height:300px}
+  }
+  @media (max-width:560px){
+    .site-header,.services,.houses,.mission,.trust-bar,.site-footer{padding-left:24px;padding-right:24px}
+    .hero-copy{padding:56px 24px}
+    .careers-copy{padding:56px 24px}
+    .story{padding:64px 24px}
+    .hero-copy h1{font-size:32px}
+    .houses-gallery .cell-wide{height:220px}
+    .houses-gallery .cell-a,.houses-gallery .cell-b{height:160px}
+    .btn{width:100%;text-align:center}
+    .careers-copy .btn{align-self:stretch}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- header -->
+  <header class="site-header">
+    <a href="#top" aria-label="Maxcare, Inc. home"><img class="logo" src="assets/maxcare-logo.png" alt="Maxcare, Inc."></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="const n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button>
+    <nav class="site-nav" id="nav">
+      <a href="#services">Services</a>
+      <a href="#houses">Houses</a>
+      <a href="#about">About Us</a>
+      <a href="#careers">Careers</a>
+      <a href="#contact" class="nav-cta">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- split hero -->
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <div class="eyebrow">Supporting New Mexicans with IDD since 1994</div>
+      <h1>Care that feels like family. Support that lasts a lifetime.</h1>
+      <p>Maxcare operates residential group homes and Customized Community Supports across Albuquerque, helping people with intellectual and developmental disabilities live full, connected lives.</p>
+      <div class="hero-ctas">
+        <a href="#services" class="btn btn-primary">Our services</a>
+        <a href="#careers" class="btn btn-outline">Explore careers</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="assets/p-3244.jpg" alt="A person Maxcare supports, enjoying a day outdoors">
+    </div>
+  </section>
+
+  <!-- trust bar -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <span>✓ Serving New Mexico since 1994</span>
+      <span>✓ 8 group homes</span>
+      <span>✓ 68 team members</span>
+      <span>✓ DD Waiver provider</span>
+      <span>✓ Customized Community Supports</span>
+    </div>
+  </div>
+
+  <!-- mission -->
+  <section class="mission" id="about">
+    <div class="mission-inner">
+      <span class="eyebrow">The mission of Maxcare, Inc.</span>
+      <p>To support and promote the self-selected lifestyles of New Mexicans with developmental disabilities by maximizing independence, supporting personal choice, and cultivating growth in our community.</p>
+    </div>
+  </section>
+
+  <!-- services -->
+  <section class="services" id="services">
+    <div class="services-head">
+      <span class="eyebrow">Our services</span>
+      <h2>How we support the people we serve</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="num">01</div>
+        <h3>Residential Group Homes</h3>
+        <p>Staffed, welcoming homes under the DD Waiver program — with round-the-clock support tailored to each resident's needs, routines, and goals.</p>
+        <a href="#houses">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="num">02</div>
+        <h3>Customized Community Supports</h3>
+        <p>Day and community programs (CCS) that build skills, independence, and real friendships out in the Albuquerque community.</p>
+        <a href="#contact">Learn more →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- homes & community -->
+  <section class="houses" id="houses">
+    <div class="houses-inner">
+      <div>
+        <span class="eyebrow">Houses</span>
+        <h2>Eight homes. One community.</h2>
+        <p class="lede">Our group homes are ordinary houses on ordinary streets — because belonging in a community starts with living in one. We recently welcomed our eighth home into the Maxcare family.</p>
+        <p class="body">Life at Maxcare means outings, celebrations, travel, and everyday moments shared with people who care.</p>
+        <a href="#contact" class="btn btn-primary" style="font-size:16px;padding:15px 28px">Tour our homes →</a>
+      </div>
+      <div class="houses-gallery">
+        <div class="cell cell-wide"><img src="assets/p-3548.jpg" alt="Residents on a group outing"></div>
+        <div class="cell cell-a"><img src="assets/p-3517.jpg" alt="A resident traveling"></div>
+        <div class="cell cell-b"><img src="assets/p-3535.jpg" alt="A resident enjoying a garden"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- founder story -->
+  <section class="story">
+    <span class="eyebrow">Our story</span>
+    <blockquote>Maxcare was founded in 1994 by a family member of a person with an intellectual and developmental disability — and that closeness still shapes how we care, every single day.</blockquote>
+    <div class="attribution">MAXCARE, INC. · ALBUQUERQUE, NEW MEXICO</div>
+  </section>
+
+  <!-- careers band -->
+  <section class="careers" id="careers">
+    <div class="careers-inner">
+      <div class="careers-copy">
+        <div class="eyebrow">Careers at Maxcare</div>
+        <h2>Become a direct support professional.</h2>
+        <p>Paid training, real purpose, and a team that has your back. This is care work that changes lives — including yours.</p>
+        <a href="#contact" class="btn btn-accent">See open positions →</a>
+      </div>
+      <div class="careers-media">
+        <img src="assets/p-3527.jpg" alt="A person Maxcare supports enjoying a community event">
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="name">Maxcare, Inc.</div>
+        <p>Residential &amp; community services for New Mexicans with intellectual and developmental disabilities. Albuquerque, NM.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="label">Explore</div>
+          <a href="#services">Services</a>
+          <a href="#houses">Houses</a>
+          <a href="#about">About Us</a>
+          <a href="#careers">Careers</a>
+        </div>
+        <div class="footer-col">
+          <div class="label">Contact</div>
+          <span>(505) 000-0000</span>
+          <span>Albuquerque, New Mexico</span>
+          <a href="mailto:jake@maxcarenm.com">Contact us →</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">© 1994–2026 Maxcare, Inc. · New Mexico S-corporation · DD Waiver &amp; Customized Community Supports provider</div>
+  </footer>
+
+</div>
+
+</body>
+</html>
