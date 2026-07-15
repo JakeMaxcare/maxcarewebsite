@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Houses — Maxcare, Inc.</title>
+<meta name="description" content="Eight group homes across the Albuquerque area — ordinary houses on ordinary streets, full of comfort, routine, and everyday life.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- header -->
+  <header class="site-header">
+    <a href="index.html" aria-label="Maxcare, Inc. home"><img class="logo" src="assets/maxcare-logo.png" alt="Maxcare, Inc."></a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="site-nav" id="nav">
+      <div class="dropdown">
+        <button class="drop-btn" type="button">Services <span class="caret">▼</span></button>
+        <div class="drop-menu">
+          <a class="drop-all" href="services.html">All services</a>
+          <div class="drop-sep"></div>
+          <a href="services.html#supported-living"><span>Supported Living</span><span class="num">01</span></a>
+          <a href="services.html#ccs"><span>Customized Community Supports</span><span class="num">02</span></a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="drop-btn active" type="button">Houses <span class="caret">▼</span></button>
+        <div class="drop-menu">
+          <a class="drop-all" href="houses.html">All houses</a>
+          <div class="drop-sep"></div>
+          <a href="#fourhills"><span>4 Hills</span><span class="num">01</span></a>
+          <a href="#st16"><span>16th Street</span><span class="num">02</span></a>
+          <a href="#arco8"><span>Arco 8</span><span class="num">03</span></a>
+          <a href="#arco9"><span>Arco 9</span><span class="num">04</span></a>
+          <a href="#manzano"><span>Manzano</span><span class="num">05</span></a>
+          <a href="#park"><span>Park</span><span class="num">06</span></a>
+          <a href="#sandia"><span>Sandia</span><span class="num">07</span></a>
+          <a href="#sunglow"><span>Sunglow</span><span class="num">08</span></a>
+        </div>
+      </div>
+      <a href="about.html">About Us</a>
+      <a href="index.html#careers">Careers</a>
+      <a href="#contact" class="nav-cta">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- ===== overview ===== -->
+  <div data-view="overview">
+    <section class="page-hero">
+      <span class="eyebrow">Our houses</span>
+      <h1>Real homes, in real neighborhoods.</h1>
+      <p>Eight group homes across the Albuquerque area — ordinary houses on ordinary streets, full of comfort, routine, and everyday life. Choose a home to step inside.</p>
+    </section>
+    <section class="cards-4">
+      <div class="cards-4-grid" id="house-cards"></div>
+    </section>
+  </div>
+
+  <!-- per-house views are generated below and inserted here -->
+  <div id="house-views"></div>
+
+  <!-- footer -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="name">Maxcare, Inc.</div>
+        <p>Residential &amp; community services for New Mexicans with intellectual and developmental disabilities. Albuquerque, NM.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="label">Explore</div>
+          <a href="services.html">Services</a>
+          <a href="houses.html">Houses</a>
+          <a href="about.html">About Us</a>
+          <a href="index.html#careers">Careers</a>
+        </div>
+        <div class="footer-col">
+          <div class="label">Contact</div>
+          <a href="tel:+15052712433">(505) 271-2433</a>
+          <span>1114 Pennsylvania St NE, Albuquerque, NM 87110</span>
+          <a href="mailto:jake@maxcarenm.com">Contact us →</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">© 1994–2026 Maxcare, Inc. · New Mexico S-corporation · DD Waiver &amp; Customized Community Supports provider</div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var houses = [
+    { name: '4 Hills', slug: 'fourhills' },
+    { name: '16th Street', slug: 'st16' },
+    { name: 'Arco 8', slug: 'arco8' },
+    { name: 'Arco 9', slug: 'arco9' },
+    { name: 'Manzano', slug: 'manzano' },
+    { name: 'Park', slug: 'park' },
+    { name: 'Sandia', slug: 'sandia' },
+    { name: 'Sunglow', slug: 'sunglow' }
+  ];
+  var spans = { 0: 'span-2x2', 5: 'span-w', 8: 'span-h', 10: 'span-w' };
+
+  var cards = document.getElementById('house-cards');
+  var container = document.getElementById('house-views');
+
+  houses.forEach(function (h, i) {
+    var num = String(i + 1).padStart(2, '0');
+
+    var card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML =
+      '<div class="card-media"><div class="slot">Cover photo<br>coming soon</div></div>' +
+      '<div class="card-body">' +
+        '<div class="card-eyebrow">House ' + num + '</div>' +
+        '<h3>' + h.name + '</h3>' +
+        '<a href="#' + h.slug + '" class="btn btn-primary">Explore this home →</a>' +
+      '</div>';
+    cards.appendChild(card);
+
+    var slots = '';
+    for (var n = 0; n < 12; n++) {
+      slots += '<div class="' + (spans[n] ? spans[n] + ' ' : '') + 'rounded"><div class="slot">Photo<br>coming soon</div></div>';
+    }
+    var prev = houses[i - 1];
+    var next = houses[i + 1];
+    var navBtns = '';
+    if (prev) navBtns += '<a class="btn btn-ghost" href="#' + prev.slug + '">← ' + prev.name + '</a>';
+    if (next) navBtns += '<a class="btn btn-ghost" href="#' + next.slug + '">' + next.name + ' →</a>';
+
+    var view = document.createElement('div');
+    view.setAttribute('data-view', h.slug);
+    view.hidden = true;
+    view.innerHTML =
+      '<section class="house-head">' +
+        '<a href="houses.html" class="back-link">← All houses</a>' +
+        '<div class="house-head-inner">' +
+          '<div>' +
+            '<span class="eyebrow">House ' + num + ' · Albuquerque, NM</span>' +
+            '<h1>' + h.name + '</h1>' +
+            '<p class="desc">The ' + h.name + ' home is one of Maxcare’s eight group homes in the Albuquerque area. An introduction to the house, its neighborhood, and everyday life here is on its way.</p>' +
+          '</div>' +
+          '<div class="house-count"><div class="big">12</div><div class="small">photos of home &amp; life here</div></div>' +
+        '</div>' +
+      '</section>' +
+      '<section class="house-gallery"><div class="mosaic">' + slots + '</div></section>' +
+      '<section class="detail-nav"><div class="detail-nav-inner">' + navBtns + '</div></section>';
+    container.appendChild(view);
+  });
+})();
+</script>
+<script src="js/site.js"></script>
+</body>
+</html>

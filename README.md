@@ -6,8 +6,19 @@ disabilities, based in Albuquerque, NM.
 
 ## Structure
 
-- `index.html` — the full site (single page, self-contained CSS, no build step)
+Static multi-page site, no build step:
+
+- `index.html` — Home
+- `services.html` — Services overview, with detail views at `#supported-living` and `#ccs`
+- `houses.html` — Houses overview, with a gallery view per home (`#fourhills`, `#st16`, `#arco8`, `#arco9`, `#manzano`, `#park`, `#sandia`, `#sunglow`)
+- `about.html` — About Us
+- `css/styles.css` — shared styles
+- `js/site.js` — mobile nav, dropdown menus, and hash-based view switching
 - `assets/` — images referenced by the site
+
+Photo spots that don't have an image yet (house galleries, founding photo)
+render as styled "coming soon" placeholders — drop the real photos into
+`assets/` and swap them in as they become available.
 
 ## Images
 
