@@ -12,6 +12,8 @@ Static multi-page site, no build step:
 - `services.html` — Services overview, with detail views at `#supported-living` and `#ccs`
 - `houses.html` — Houses overview, with a gallery view per home (`#fourhills`, `#st16`, `#arco8`, `#arco9`, `#manzano`, `#park`, `#sandia`, `#sunglow`)
 - `about.html` — About Us
+- `careers.html` — DSP role overview; applications go through the
+  Maxcare company page on Indeed (no ATS)
 - `contact.html` — contact form (submissions go through Formspree to
   jake@maxcarenm.com; form id `mvzezzzk`), plus phone/address details
 - `css/styles.css` — shared styles
